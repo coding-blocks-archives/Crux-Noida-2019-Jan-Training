@@ -3,7 +3,9 @@ package com.codingblocks.lecture_3;
 public class Assignment {
 
     public static void main(String[] args) {
-        int val = deci2bin(71);
+//        int val = deci2bin(71);
+
+        int val = inverse(52314);
 
         System.out.println(val);
     }
@@ -82,5 +84,30 @@ public class Assignment {
         int result = deci2any(deci, target);
 
         return result;
+    }
+
+    public static int power(int x, int n){
+        int result = 1;
+
+        for (int i = 0; i < n; i++){
+            result = result * x;
+        }
+
+        return result;
+    }
+
+    public static int inverse(int num){
+        int res = 0;
+        int pos = 1;
+
+        while (num > 0){
+            int val = num % 10;
+            num = num / 10;
+
+            res = res + pos * power(10, val - 1);
+            pos++;
+        }
+
+        return res;
     }
 }

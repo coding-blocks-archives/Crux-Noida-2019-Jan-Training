@@ -6,26 +6,34 @@ import java.util.Arrays;
 
 public class Count {
     public static void main(String[] args) {
-        int[] nums = new int[100000];
 
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = (int)(Math.random() * 100000);
-        }
+        String line = "ccaabb";
+
+        String res =countSortString(line);
+
+        System.out.println(res);
+
+//        int[] nums = new int[100000];
+//
+//        for (int i = 0; i < nums.length; i++) {
+//            nums[i] = (int)(Math.random() * 100000);
+//        }
 
 //        Arrays.sort(nums);
 
-        countSort(nums, 100000);
+//        countSort(nums, 100000);
+
 
 //        Sorting.bubble(nums);
 
-        StringBuilder builder = new StringBuilder();
+//        StringBuilder builder = new StringBuilder();
+//
+//        for (int i = 0; i < nums.length; i++) {
+//            builder.append(nums[i]);
+//            builder.append(" ");
+//        }
 
-        for (int i = 0; i < nums.length; i++) {
-            builder.append(nums[i]);
-            builder.append(" ");
-        }
-
-        System.out.println(builder);
+//        System.out.println(Arrays.toString(nums));
 
 //        int[] d = sort01(nums);
 //
@@ -77,6 +85,24 @@ public class Count {
     }
 
     public static String countSortString(String line){
+        int[] feq = new int[26];
+
+        for (int i = 0; i < line.length(); i++) {
+            int v = line.charAt(i) - 'a';
+            feq[v]++;
+        }
+
+//        System.out.println(Arrays.toString(feq));
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < feq.length; i++) {
+            for (int j = 0; j < feq[i]; j++) {
+                builder.append((char)(i+'a'));
+            }
+        }
+
+        return builder.toString();
 
     }
 }

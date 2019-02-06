@@ -7,9 +7,30 @@ public class StringExample {
 
 //        Scanner s = new Scanner(System.in);
 
-        String line = "baab";
+        String line = "Hello";
 
-        System.out.println(countPallin(line));
+        String second = "world";
+
+
+
+
+
+        System.out.println(line.substring(1));
+//
+
+//
+//        for (int i = 0; i < line.length(); i++) {
+//            System.out.println(line.charAt(i));
+//        }
+//
+//        char[] chars = line.toCharArray();
+
+
+
+
+
+
+//        System.out.println(countPallin(line));
 
 //        char[] mango = {'m', 'a', 'n'};
 //

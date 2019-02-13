@@ -11,7 +11,7 @@ public class Maze {
 
         boolean[][] maze = new boolean[m][n];
 
-        maze[0][1] = true;
+        maze[0][0] = true;
 
 
         int c = mazeAllPath("", maze, 0, 0, m-1, n-1);
@@ -81,7 +81,7 @@ public class Maze {
             return 1;
         }
 
-        if (!safe(c_r, c_c, t_r, t_c)){
+        if (!bound(maze, c_r, c_c, t_r, t_c)){
             return 0;
         }
 
@@ -109,7 +109,7 @@ public class Maze {
             return 1;
         }
 
-        if (!safe(c_r, c_c, t_r, t_c)){
+        if (!bound(maze, c_r, c_c, t_r, t_c)){
             return 0;
         }
 
@@ -131,8 +131,8 @@ public class Maze {
         return sum;
     }
 
-    public static boolean safe(int c_r, int c_c, int t_r, int t_c) {
-        return c_r >= 0 && c_r <= t_r && c_c >= 0 && c_c <= t_c;
+    public static boolean bound(boolean[][] maze, int c_r, int c_c, int t_r, int t_c) {
+        return c_r >= 0 && c_r < maze.length && c_c >= 0 && c_c < maze[0].length;
     }
 
 

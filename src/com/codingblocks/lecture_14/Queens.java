@@ -2,7 +2,7 @@ package com.codingblocks.lecture_14;
 
 public class Queens {
     public static void main(String[] args) {
-        int n = 4;
+        int n = 8;
         boolean[][] board = new boolean[n][n];
 
         int c = nqueens(board, 0);
@@ -12,7 +12,7 @@ public class Queens {
 
     public static int nqueens(boolean[][] board, int row){
         if (row == board.length){
-            // display
+            display(board);
             return 1;
         }
 
@@ -60,7 +60,18 @@ public class Queens {
     }
 
 
-    public void display(boolean[][] board){
+    public static void display(boolean[][] board){
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board.length; col++) {
+                if (board[row][col]){
+                    System.out.print("Q ");
+                } else {
+                    System.out.print("X ");
+                }
+            }
+            System.out.println();
+        }
 
+        System.out.println();
     }
 }

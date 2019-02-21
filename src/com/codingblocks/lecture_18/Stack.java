@@ -2,7 +2,7 @@ package com.codingblocks.lecture_18;
 
 public class Stack {
 
-    private int[] data;
+    protected int[] data;
     private int top;
 
     private static final int DEFAULT_SIZE = 10;
@@ -12,13 +12,12 @@ public class Stack {
         this.top = -1;
     }
 
-    public boolean push(int value){
+    public void push(int value){
         if (isFull()){
-            return false;
+            return;
         }
 
         this.data[++this.top] = value;
-        return true;
     }
 
     public int pop() throws IndexOutOfBoundsException{
@@ -46,4 +45,17 @@ public class Stack {
         return this.top == this.data.length - 1;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i <= top; i++) {
+            builder.append(data[i]);
+            if (i < top){
+                builder.append(", ");
+            }
+        }
+
+        return builder.toString();
+    }
 }

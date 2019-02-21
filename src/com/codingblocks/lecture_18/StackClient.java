@@ -2,13 +2,14 @@ package com.codingblocks.lecture_18;
 
 public class StackClient {
     public static void main(String[] args){
-        Stack s1 = new Stack();
-        Stack s2 = new Stack();
+        Stack s1 = new DynamicStack();
+        Stack s2 = new DynamicStack();
 
-        s1.push(45);
-        s1.push(456);
+        for (int i = 0; i < 100; i++) {
+            s1.push(i);
+        }
 
-        s2.push(4563);
+        System.out.println(s1);
 
         try {
 
@@ -26,6 +27,8 @@ public class StackClient {
         }
 
         System.out.println("Ye bhi hona hai");
+
+        System.out.println(s1);
 
 
     }

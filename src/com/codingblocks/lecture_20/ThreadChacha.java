@@ -2,9 +2,13 @@ package com.codingblocks.lecture_20;
 
 public class ThreadChacha extends Thread {
 
-    public ThreadChacha(String name, int priority){
+    private int sleeptime;
+
+    public ThreadChacha(String name, int priority, int sleep_time){
         this.setName(name);
         this.setPriority(priority);
+
+        this.sleeptime = sleep_time;
     }
 
     @Override
@@ -12,7 +16,7 @@ public class ThreadChacha extends Thread {
         try {
             for (int i = 0; i < 5; i++) {
                 System.out.println(this.getName() + " is running " + i);
-                Thread.sleep(1);
+                Thread.sleep(sleeptime);
             }
         } catch (Exception e){
 

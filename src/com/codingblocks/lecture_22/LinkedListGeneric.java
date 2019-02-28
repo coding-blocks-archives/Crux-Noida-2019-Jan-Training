@@ -181,6 +181,17 @@ public class LinkedListGeneric<T extends Comparable<T>> {
         return back.value;
     }
 
+    public LinkedListGeneric<T> createCopy(){
+        LinkedListGeneric<T> list = new LinkedListGeneric<>();
+        list.head = this.head;
+
+        return list;
+    }
+
+    public T common(LinkedListGeneric<T> list){
+
+    }
+
     private class Node{
         private T value;
         private Node next;

@@ -1,6 +1,6 @@
-package com.codingblocks.lecture_21;
+package com.codingblocks.lecture_22;
 
-public class LinkedListGeneric <T extends Comparable<T>> {
+public class LinkedListGeneric<T extends Comparable<T>> {
 
     private Node head;
 

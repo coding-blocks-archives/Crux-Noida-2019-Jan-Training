@@ -21,5 +21,7 @@ public class Client {
 
         list1.display();
         list2.display();
+
+        System.out.println(list1.common(list2));
     }
 }

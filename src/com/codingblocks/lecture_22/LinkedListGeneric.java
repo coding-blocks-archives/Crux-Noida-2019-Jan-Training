@@ -189,7 +189,33 @@ public class LinkedListGeneric<T extends Comparable<T>> {
     }
 
     public T common(LinkedListGeneric<T> list){
+        int s1 = this.size();
+        int s2 = list.size();
 
+        Node first = this.head;
+        Node second = list.head;
+
+
+        int diff = Math.abs(s1 - s2);
+
+        for (int i = 0; i < diff; i++) {
+            if (s1 > s2){
+                first = first.next;
+            } else {
+                second = second.next;
+            }
+        }
+
+        while (first != null && second != null){
+            if (first == second){
+                return first.value;
+            }
+
+            first = first.next;
+            second = second.next;
+        }
+
+        return null;
     }
 
     private class Node{
@@ -203,6 +229,7 @@ public class LinkedListGeneric<T extends Comparable<T>> {
         public Node(T value, Node next) {
             this.value = value;
             this.next = next;
+
         }
     }
 

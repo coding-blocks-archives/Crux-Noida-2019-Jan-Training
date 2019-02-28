@@ -1,7 +1,6 @@
 package com.codingblocks.lecture_22;
 
 import java.io.File;
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class TreeClient {
@@ -15,5 +14,7 @@ public class TreeClient {
         for (int i = 0; i < 5; i++) {
             tree.populate(s);
         }
+
+        tree.display();
     }
 }

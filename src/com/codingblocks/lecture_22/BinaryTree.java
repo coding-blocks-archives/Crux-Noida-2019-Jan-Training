@@ -31,6 +31,20 @@ public class BinaryTree {
         return node;
     }
 
+    public void display(){
+        display(root, "", "root");
+    }
+
+    private void display(Node node, String indent, String type){
+        if (node == null){
+            return;
+        }
+
+        System.out.println(indent + node.value + " " + type);
+        display(node.left, indent + "\t", "left");
+        display(node.right, indent + "\t", "right");
+    }
+
     private class Node{
         private int value;
         private Node left;

@@ -88,7 +88,10 @@ public class BinarySearchTreeBalancing {
             return false;
         }
 
-        return isBalanced(node.left) && isBalanced(node.right);
+        boolean left = isBalanced(node.left);
+        boolean right = isBalanced(node.right);
+
+        return  left && right;
     }
 
     public int height(){
